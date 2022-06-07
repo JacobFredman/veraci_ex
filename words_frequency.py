@@ -29,13 +29,19 @@ def get_pages_with_words_view(words :list):
 
 functionName = sys.argv[1]
 if functionName == 'add_word':
-    word = sys.argv[2]
-    pageNum = sys.argv[3]
-    add_word(word, pageNum)
+    if len(sys.argv) < 4:
+        print("arguments are missing")
+    else:
+        word = sys.argv[2]
+        pageNum = sys.argv[3]
+        add_word(word, pageNum)
 elif functionName == 'get_pages_with_words':
-    words = sys.argv[2]
-    wordsParam = words.split(',')
-    get_pages_with_words_view(wordsParam)
+    if len(sys.argv) < 3:
+        print('arguments are missing')
+    else:
+        words = sys.argv[2]
+        wordsParam = words.split(',')
+        get_pages_with_words_view(wordsParam)
 else:
     print('wrong function, please enter one of the following: add_word / get_pages_with_words')
 
