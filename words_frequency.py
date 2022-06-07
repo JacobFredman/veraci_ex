@@ -7,9 +7,9 @@ import sys
 
 def add_word_view(word: str, pageNum: int):
     if pageNum <= 0:
-        raise Exception("page number must be positive")
+        print("page number must be positive")
     if word == " ":
-        raise Exception("the word is empty")
+        print("the word is empty")
 
     try:
         add_word(word, pageNum)
