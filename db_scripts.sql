@@ -37,5 +37,16 @@ SELECT page_num
     WHERE FIND_IN_SET(word, words);
 END$$
 
+DELIMITER $$
+USE `WORDS_IN_PAGES_DB`$$
+CREATE  PROCEDURE `get_all_words` (IN `words` VARCHAR(5000))
+BEGIN
+SELECT *
+	FROM words_in_pages
+    WHERE FIND_IN_SET(word, words);
+END$$
+
+
+
 DELIMITER ;
 
